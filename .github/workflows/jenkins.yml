@@ -17,7 +17,7 @@ jobs:
       - name: "Check out"
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ context.payload.workflow_run.head_sha }}
           fetch-depth: 0
       - name: 'Download artifact'
         uses: actions/github-script@v3.1.0
